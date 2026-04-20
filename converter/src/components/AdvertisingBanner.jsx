@@ -5,7 +5,7 @@ import background from '../assets/Rectangle.svg';
 export function AdvertisingBanner() {
     return (
         <div
-            className="h-95 flex items-center justify-center gap-x-53"
+            className="h-100 flex items-center justify-center gap-x-53"
             style={{ backgroundImage: `url(${background})` }}
         >
             <div className="flex flex-col gap-5">
