@@ -1,12 +1,13 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
-import {Header} from './components/header/Header.jsx';
+import {Header} from './components/Header.jsx';
 import {Home} from './pages/Home';
 import {Converter} from "./pages/Converter";
 import {Services} from "./pages/Services.jsx";
 import {Contacts} from "./pages/Contacts.jsx";
 import {Questions} from "./pages/Questions.jsx";
 import {Account} from "./pages/Account.jsx";
+import {Footer} from "./components/Footer.jsx";
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
                 <Route path='/account' element={<Account />}/>
                 <Route path="*" element={<Navigate to="/home" replace />} />
             </Routes>
+            <Footer />
         </Router>
     )
 }
