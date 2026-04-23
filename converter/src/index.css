@@ -1,11 +1,27 @@
 @import "tailwindcss";
 
-.text{
-    color: #707C87;
+@theme {
+    --color-brand-primary: #2C36F2;
+    --color-brand-bg: #F6F7FF;
+    --color-brand-text: #707C87;
+    --color-brand-dark: #1F1E25;
+    --color-brand-white: #FFFFFF;
 }
-.text-active{
-    color: #2C36F2;
-}
-.bg-header{
-    background-color: #F6F7FF;
+
+@layer base {
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        @apply m-0 min-w-0 bg-white text-brand-dark;
+    }
+
+    img {
+        @apply max-w-full h-auto block;
+    }
+
+    a {
+        @apply no-underline;
+    }
 }

@@ -6,17 +6,17 @@ import {Navigate} from "./Navigate.jsx";
 
 export function Header() {
     return (
-        <nav className='flex py-8.5 items-center justify-between px-24 bg-white'>
-            <div className='flex items-center'>
-                <Logo />
-                <div className='flex gap-10 ml-20 text-md'>
-                    <Navigate link={'services'} name={'Послуги'}/>
-                    <Navigate link={'converter'} name={'Конвертер валют'}/>
-                    <Navigate link={'contacts'} name={'Контакти'}/>
-                    <Navigate link={'questions'} name={'Задати питання'}/>
+        <nav className='bg-brand-bg w-full'>
+            <div className='x-auto max-w-[100%] px-4 lg:px-12 xl:px-16 flex items-center justify-between py-4'>
+                <div className='flex items-center gap-6 md:gap-10 xl:gap-14'>
+                    <Logo />
+                    <Navigate className='flex gap-6 lg:gap-10 text-sm lg:text-md'/>
                 </div>
+                <Link to="/account" className='flex items-center gap-3 text-sm lg:text-md'>
+                    <img src={vector} alt="vector"/>
+                    Особистий кабінет
+                </Link>
             </div>
-            <Link to="/account" className='flex gap-3'> <img src={vector} alt="vector"/>Особистий кабінет</Link>
         </nav>
     )
 }
