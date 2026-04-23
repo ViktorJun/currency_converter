@@ -1,13 +1,13 @@
 import { NavLink } from "react-router";
+import { twMerge } from 'tailwind-merge';
 
-export function Navigate({link, name}) {
+export function Navigate({className}) {
     return (
-        <NavLink to={`/${link}`}
-                 className={({ isActive }) =>
-                     isActive ? "text-active" : "text"
-                 }
-        >
-            {name}
-        </NavLink>
+    <div className={twMerge('flex', className)}>
+        <NavLink to={'services'} className={({ isActive }) => isActive ? "text-brand-primary" : "text-brand-text"}>Послуги</NavLink>
+        <NavLink to={'converter'} className={({ isActive }) => isActive ? "text-brand-primary" : "text-brand-text"}>Конвертер валют</NavLink>
+        <NavLink to={'contacts'} className={({ isActive }) => isActive ? "text-brand-primary" : "text-brand-text"}>Контакти</NavLink>
+        <NavLink to={'questions'} className={({ isActive }) => isActive ? "text-brand-primary" : "text-brand-text"}>Задати питання</NavLink>
+    </div>
     )
 }
