@@ -7,7 +7,7 @@ import {MobileNumbers} from "./footerComponents/MobileNumbers.jsx";
 
 export function Footer() {
     return (
-        <div className='bg-gray-100 py-15 px-3 md:px-6 lg:px-8'>
+        <div className='bg-brand-bg py-15 px-3 md:px-6 lg:px-8'>
             <div className='grid grid-cols-5 gap-6 justify-items-center max-w-[1536px] mx-auto'>
                 <div className='max-w-54 flex flex-col gap-5'>
                     <Logo />
