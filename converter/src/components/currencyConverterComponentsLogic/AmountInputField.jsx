@@ -19,7 +19,7 @@ export function AmountInputField({name, control, value, error, onValueChange}) {
                     helperText={error?.message}
                     slotProps={{
                         htmlInput: {
-                            maxLength: 13,
+                            maxLength: 8,
                             inputMode: 'numeric',
                         },
                     }}

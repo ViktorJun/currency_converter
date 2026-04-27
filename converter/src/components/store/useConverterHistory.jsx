@@ -12,7 +12,6 @@ export const useConverterHistory = create((set) => ({
         const {toCurrency, fromCurrency} = useCurrencyName.getState();
         set((state) => ({
             history: [
-                ...state.history,
                 {
                     date: date,
                     toAmount: toAmount,
@@ -20,12 +19,8 @@ export const useConverterHistory = create((set) => ({
                     toCurrency: toCurrency,
                     fromCurrency: fromCurrency
                 },
-            ]
-        }))
-    },
-    deleteElement: () => {
-        set((state) => ({
-            history: state.history.slice(1)
+                ...state.history,
+            ].slice(0, 10)
         }))
     },
     clearHistory: () => {
