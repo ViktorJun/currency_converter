@@ -1,5 +1,5 @@
 export function convertAmount(nameAmount, value, rate) {
-    const isValidAmount = /^\d{1,10}(\.\d{0,2})?$/.test(value);
+    const isValidAmount = /^\d+(\.\d{0,2})?$/.test(value);
     if (!isValidAmount || !rate) {
         return null;
     }
