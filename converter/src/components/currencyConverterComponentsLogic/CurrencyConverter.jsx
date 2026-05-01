@@ -39,10 +39,9 @@ export function CurrencyConverter() {
             toAmount: '',
         }
     });
-    const onSubmit = (data) => {
+    const onSubmit = () => {
         if (!isToday) return;
         setHistory()
-        console.log(data);
     };
     const handleChange = (nameAmount, value) => {
         const result = convertAmount(nameAmount, value, currencyData[0]?.rate);
