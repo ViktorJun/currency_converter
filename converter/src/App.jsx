@@ -9,11 +9,13 @@ import {Questions} from "./pages/Questions.jsx";
 import {Account} from "./pages/Account.jsx";
 import {Footer} from "./components/Footer.jsx";
 import {NotFound} from "./pages/NotFound.jsx";
+import {ScrollToHash} from "./components/ScrollToHash.jsx";
 
 function App() {
 
     return (
         <Router>
+            <ScrollToHash />
             <Header />
             <Routes>
                 <Route path='/' element={<Home />}/>
