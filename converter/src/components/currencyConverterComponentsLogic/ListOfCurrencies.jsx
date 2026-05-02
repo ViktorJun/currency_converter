@@ -1,5 +1,6 @@
 import {useCurrencyAmount} from '../store/useCurrencyAmount.jsx';
-import {Select, MenuItem} from '@mui/material';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 
 export function ListOfCurrencies({ value, onChange }) {
     const setAmount = useCurrencyAmount((state) => state.setAmount);
