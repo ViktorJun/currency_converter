@@ -55,7 +55,7 @@ export function CurrencyConverter() {
         fetchCurrency();
     }, [fromCurrency, toCurrency, fetchCurrency, selectedDate]);
     return (
-        <div className='bg-brand-bg px-7 py-10'>
+        <div className='bg-brand-bg px-7 py-10' id='converter'>
             <div className='flex flex-col place-self-center px-3 py-14 md:px-10 bg-brand-white gap-y-5'>
                 <h1 className='w-full text-[29px] font-bold'>Конвертер валют</h1>
                 <form onSubmit={handleSubmit(onSubmit)} className='flex justify-between gap-x-3 lg:gap-x-9'>

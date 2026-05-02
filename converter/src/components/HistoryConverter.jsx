@@ -5,7 +5,7 @@ export function HistoryConverter() {
     const history = useConverterHistory((state) => state.history);
     const clearHistory = useConverterHistory((state) => state.clearHistory);
     return (
-        <div className='bg-brand-white flex justify-center py-10'>
+        <div className='bg-brand-white flex justify-center py-10' id='history'>
             <div className='flex flex-col bg-brand-bg max-w-[856px] w-full py-8 gap-y-10'>
                 <div className='flex justify-between px-8 items-center'>
                     <h1 className='text-2xl font-bold'>Історія конвертації</h1>
