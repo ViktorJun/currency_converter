@@ -1,9 +1,9 @@
 import {Logo} from "./Logo.jsx";
 import {Navigate} from "./Navigate.jsx";
-import mobilePhone from '../assets/mobilePhone.svg';
-import phone from '../assets/phone.svg';
-import {SocialNetworks} from "./footerComponents/SocialNetworks.jsx";
-import {MobileNumbers} from "./footerComponents/MobileNumbers.jsx";
+import mobilePhone from '../../assets/mobilePhone.svg';
+import phone from '../../assets/phone.svg';
+import {SocialNetworks} from "./SocialNetworks.jsx";
+import {MobileNumbers} from "./MobileNumbers.jsx";
 
 export function Footer() {
     return (

@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import vector from "../assets/Vector.svg";
+import vector from "../../assets/Vector.svg";
 import {Logo} from "./Logo.jsx";
 import {Navigate} from "./Navigate.jsx";
 

@@ -1,17 +1,17 @@
 import {useForm} from 'react-hook-form';
 import { zodResolver } from "@hookform/resolvers/zod";
-import {ListOfCurrencies} from "./ListOfCurrencies.jsx";
-import {useCurrencyName} from "../store/useCurrencyName.jsx";
-import {useCurrencyExchangeRates} from "../store/useCurrencyExchangeRates.jsx";
+import {ListOfCurrencies} from "../ui/ListOfCurrencies.jsx";
+import {useCurrencyName} from "../../store/useCurrencyName.jsx";
+import {useCurrencyExchangeRates} from "../../store/useCurrencyExchangeRates.jsx";
 import { useEffect } from "react";
-import {useCurrencyAmount} from "../store/useCurrencyAmount.jsx";
-import {formSchema} from "./zodSchema.jsx";
-import {convertAmount} from "./convertAmount.jsx";
-import {ConverterDatePicker} from "./ConverterDatePicker.jsx";
-import {useDate} from "../store/useDate.jsx";
+import {useCurrencyAmount} from "../../store/useCurrencyAmount.jsx";
+import {formSchema} from "../../schemas/zodSchema.jsx";
+import {convertAmount} from "../../utils/convertAmount.jsx";
+import {ConverterDatePicker} from "../ui/ConverterDatePicker.jsx";
+import {useDate} from "../../store/useDate.jsx";
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
-import {AmountInputField} from "./AmountInputField.jsx";
-import {useConverterHistory} from "../store/useConverterHistory.jsx";
+import {AmountInputField} from "../ui/AmountInputField.jsx";
+import {useConverterHistory} from "../../store/useConverterHistory.jsx";
 
 export function CurrencyConverter() {
     const fromCurrency = useCurrencyName((state) => state.fromCurrency);

@@ -1,4 +1,4 @@
-import {useConverterHistory} from "./store/useConverterHistory.jsx";
+import {useConverterHistory} from "../../store/useConverterHistory.jsx";
 import EastIcon from '@mui/icons-material/East';
 
 export function HistoryConverter() {
