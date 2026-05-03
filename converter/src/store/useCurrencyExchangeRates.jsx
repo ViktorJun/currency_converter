@@ -1,7 +1,7 @@
 import {create} from 'zustand';
-import {LINK_API} from "../Variables.jsx";
-import {useCurrencyName} from "./useCurrencyName";
-import {useDate} from "./useDate";
+import {LINK_API} from "../constants/Variables.jsx";
+import {useCurrencyName} from "./useCurrencyName.jsx";
+import {useDate} from "./useDate.jsx";
 export const useCurrencyExchangeRates = create((set) => ({
     currency: [],
     isLoading: false,

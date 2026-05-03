@@ -1,9 +1,10 @@
-import {AdvertisingBanner} from "../components/AdvertisingBanner.jsx";
+import {AdvertisingBanner} from "../components/sections/AdvertisingBanner.jsx";
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 import HistoryIcon from '@mui/icons-material/History';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
-import {ServiceCard} from '../components/serviceComponents/ServiceCard.jsx';
-import {ServiceInfo} from "../components/serviceComponents/ServiceInfo.jsx";
+import {FeatureCard} from '../components/ui/FeatureCard.jsx';
+import {ServiceInfo} from "../components/sections/ServiceInfo.jsx";
+import converterImage from "../assets/currencyConverter.svg";
 
 export function Services() {
     const features = [
@@ -26,12 +27,27 @@ export function Services() {
             link: '/questions'
         },
     ]
+    const banner = {
+        title: 'Наші послуги',
+        description: 'Зручні інструменти для обміну валют і керування операціями',
+        nameBtn: 'Конвертер валют',
+        image: converterImage,
+        link: '/converter',
+        styleImage: 'w-full max-h-[390px]'
+    }
     return (
         <div>
-            <AdvertisingBanner />
+            <AdvertisingBanner
+                title={banner.title}
+                description={banner.description}
+                nameBtn={banner.nameBtn}
+                image={banner.image}
+                link={banner.link}
+                styleImage={banner.styleImage}
+            />
             <div className="grid grid-cols-3 grid-rows-1 justify-items-center py-10 px-2 gap-3 mx-auto max-w-[1536px]">
                 {features.map((feature) => (
-                    <ServiceCard
+                    <FeatureCard
                         key={feature.title}
                         icon={feature.icon}
                         title={feature.title}

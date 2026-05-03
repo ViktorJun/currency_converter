@@ -1,4 +1,4 @@
-import {useCurrencyAmount} from '../store/useCurrencyAmount.jsx';
+import {useCurrencyAmount} from '../../store/useCurrencyAmount.jsx';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 

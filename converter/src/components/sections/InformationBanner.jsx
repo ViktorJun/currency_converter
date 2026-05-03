@@ -1,4 +1,4 @@
-import info from "../assets/info.svg";
+import info from "../../assets/info.svg";
 import {Link} from 'react-router';
 
 export function InformationBanner() {
