@@ -1,5 +1,3 @@
 export function Questions() {
-    return (
-        <p>Questions</p>
-    )
+  return <p>Questions</p>;
 }

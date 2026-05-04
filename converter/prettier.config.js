@@ -1,0 +1,7 @@
+export default {
+  semi: true,
+  singleQuote: true,
+  printWidth: 80,
+  trailingComma: 'es5',
+  plugins: ['prettier-plugin-tailwindcss'],
+};
