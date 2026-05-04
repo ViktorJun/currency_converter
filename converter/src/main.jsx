@@ -6,9 +6,9 @@ import './index.css';
 import App from './App.jsx';
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <App />
-    </LocalizationProvider>
-  </StrictMode>
+	<StrictMode>
+		<LocalizationProvider dateAdapter={AdapterDayjs}>
+			<App />
+		</LocalizationProvider>
+	</StrictMode>
 );

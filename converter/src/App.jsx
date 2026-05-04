@@ -12,22 +12,22 @@ import { NotFound } from './pages/NotFound.jsx';
 import { ScrollToHash } from './router/ScrollToHash.jsx';
 
 function App() {
-  return (
-    <Router>
-      <ScrollToHash />
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/converter" element={<Converter />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contacts" element={<Contacts />} />
-        <Route path="/questions" element={<Questions />} />
-        <Route path="/account" element={<Account />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
-    </Router>
-  );
+	return (
+		<Router>
+			<ScrollToHash />
+			<Header />
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/converter" element={<Converter />} />
+				<Route path="/services" element={<Services />} />
+				<Route path="/contacts" element={<Contacts />} />
+				<Route path="/questions" element={<Questions />} />
+				<Route path="/account" element={<Account />} />
+				<Route path="*" element={<NotFound />} />
+			</Routes>
+			<Footer />
+		</Router>
+	);
 }
 
 export default App;
