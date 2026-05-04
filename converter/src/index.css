@@ -1,28 +1,28 @@
 @import 'leaflet/dist/leaflet.css';
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-    --color-brand-primary: #2C36F2;
-    --color-brand-bg: #F6F7FF;
-    --color-brand-text: #707C87;
-    --color-brand-dark: #1F1E25;
-    --color-brand-white: #FFFFFF;
+  --color-brand-primary: #2c36f2;
+  --color-brand-bg: #f6f7ff;
+  --color-brand-text: #707c87;
+  --color-brand-dark: #1f1e25;
+  --color-brand-white: #ffffff;
 }
 
 @layer base {
-    * {
-        box-sizing: border-box;
-    }
+  * {
+    box-sizing: border-box;
+  }
 
-    body {
-        @apply m-0 min-w-0 bg-white text-brand-dark;
-    }
+  body {
+    @apply text-brand-dark m-0 min-w-0 bg-white;
+  }
 
-    img {
-        @apply max-w-full h-auto block;
-    }
+  img {
+    @apply block h-auto max-w-full;
+  }
 
-    a {
-        @apply no-underline;
-    }
+  a {
+    @apply no-underline;
+  }
 }
