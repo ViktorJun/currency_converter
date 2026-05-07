@@ -1,1 +1,0 @@
-export const LINK_API = 'https://api.frankfurter.dev/v2/rates?';
