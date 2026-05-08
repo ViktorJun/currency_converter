@@ -2,67 +2,73 @@ import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
+import dayjs from 'dayjs';
 
+import type { CurrencyFormValues, CurrencyCode } from '../../schemas/zodSchema';
+import { formSchema } from '../../schemas/zodSchema';
 import { ListOfCurrencies } from '../ui/ListOfCurrencies';
 import { AmountInputField } from '../ui/AmountInputField';
 import { ConverterDatePicker } from '../ui/ConverterDatePicker';
-import { formSchema } from '../../schemas/zodSchema';
 import { convertAmount } from '../../utils/convertAmount';
-import { useCurrencyName } from '../../store/useCurrencyName';
-import {
-	useCurrencyAmount,
-	type AmountField,
-} from '../../store/useCurrencyAmount';
+import { type AmountField } from '../../store/useCurrencyAmount';
 import { useCurrencyExchangeRates } from '../../store/useCurrencyExchangeRates';
-import { useDate } from '../../store/useDate';
 import { useConverterHistory } from '../../store/useConverterHistory';
 
 export function CurrencyConverter() {
-	const fromCurrency = useCurrencyName((state) => state.fromCurrency);
-	const toCurrency = useCurrencyName((state) => state.toCurrency);
-	const setCurrency = useCurrencyName((state) => state.setCurrency);
-
 	const fetchCurrency = useCurrencyExchangeRates(
 		(state) => state.fetchCurrency
 	);
 	const currencyData = useCurrencyExchangeRates((state) => state.currency);
-
-	const setAmount = useCurrencyAmount((state) => state.setAmount);
-	const fromAmount = useCurrencyAmount((state) => state.fromAmount);
-	const toAmount = useCurrencyAmount((state) => state.toAmount);
-
-	const selectedDate = useDate((state) => state.selectedDate);
-	const today = useDate((state) => state.today);
-
+	const today = dayjs().startOf('day');
 	const setHistory = useConverterHistory((state) => state.setHistory);
-
-	const isToday = selectedDate.isSame(today, 'day');
 	const {
 		control,
 		handleSubmit,
 		setValue,
+		resetField,
+		watch,
 		formState: { errors },
-	} = useForm({
+	} = useForm<CurrencyFormValues>({
 		resolver: zodResolver(formSchema),
 		mode: 'onChange',
 		defaultValues: {
 			fromAmount: '',
 			toAmount: '',
+			fromCurrency: 'UAH',
+			toCurrency: 'USD',
+			selectedDate: dayjs().startOf('day'),
 		},
 	});
-	const onSubmit = (): void => {
+	const selectedDate = watch('selectedDate');
+	const fromCurrency = watch('fromCurrency');
+	const toCurrency = watch('toCurrency');
+	const isToday = selectedDate.isSame(today, 'day');
+	const resetAmounts = () => {
+		resetField('fromAmount', { defaultValue: '' });
+		resetField('toAmount', { defaultValue: '' });
+	};
+	const onSubmit = (data: CurrencyFormValues): void => {
 		if (!isToday) return;
-		setHistory();
+		setHistory({
+			date: selectedDate.format('DD.MM.YYYY'),
+			fromAmount: data.fromAmount,
+			toAmount: data.toAmount,
+			fromCurrency: data.fromCurrency,
+			toCurrency: data.toCurrency,
+		});
 	};
 	const handleChange = (nameAmount: AmountField, value: string): void => {
 		const result = convertAmount(nameAmount, value, currencyData[0]?.rate);
 		if (!result) return;
-		setAmount(result.field, result.value);
 		setValue(result.field, result.value, { shouldValidate: true });
 	};
 	useEffect(() => {
-		fetchCurrency();
-	}, [fromCurrency, toCurrency, fetchCurrency, selectedDate]);
+		fetchCurrency({
+			fromCurrency,
+			toCurrency,
+			selectedDate,
+		});
+	}, [fromCurrency, toCurrency, selectedDate, fetchCurrency]);
 	return (
 		<div className="bg-brand-bg px-7 py-10" id="converter">
 			<div className="bg-brand-white flex flex-col gap-y-5 place-self-center px-3 py-14 md:px-10">
@@ -80,20 +86,28 @@ export function CurrencyConverter() {
 						<AmountInputField
 							name="fromAmount"
 							control={control}
-							value={fromAmount}
 							error={errors.fromAmount}
 							onValueChange={(value: string) => {
-								setAmount('fromAmount', value);
 								handleChange('fromAmount', value);
 							}}
 						/>
 						<ListOfCurrencies
 							value={fromCurrency}
-							onChange={(value: string) =>
-								setCurrency('fromCurrency', value)
-							}
+							excludedValue={toCurrency}
+							onChange={(value: CurrencyCode) => {
+								setValue('fromCurrency', value);
+								resetAmounts();
+							}}
 						/>
-						<ConverterDatePicker />
+						<ConverterDatePicker
+							value={selectedDate}
+							onChange={(value) => {
+								setValue('selectedDate', value);
+								resetAmounts();
+							}}
+							minDate={today.subtract(1, 'week')}
+							maxDate={today}
+						/>
 					</div>
 					<SwapHorizIcon
 						sx={{
@@ -110,18 +124,18 @@ export function CurrencyConverter() {
 						<AmountInputField
 							name="toAmount"
 							control={control}
-							value={toAmount}
 							error={errors.toAmount}
 							onValueChange={(value: string) => {
-								setAmount('toAmount', value);
 								handleChange('toAmount', value);
 							}}
 						/>
 						<ListOfCurrencies
 							value={toCurrency}
-							onChange={(value: string) =>
-								setCurrency('toCurrency', value)
-							}
+							excludedValue={fromCurrency}
+							onChange={(value: CurrencyCode) => {
+								setValue('toCurrency', value);
+								resetAmounts();
+							}}
 						/>
 						<button
 							type="submit"

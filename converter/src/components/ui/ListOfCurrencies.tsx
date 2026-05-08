@@ -1,30 +1,24 @@
-import { useCurrencyAmount } from '../../store/useCurrencyAmount';
-import Select from '@mui/material/Select';
+import type { CurrencyCode } from '../../schemas/zodSchema';
+import Select, { type SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 
 export type ListOfCurrenciesProps = {
-	value: string;
-	onChange: (value: string) => void;
+	value: CurrencyCode;
+	onChange: (value: CurrencyCode) => void;
+	excludedValue?: CurrencyCode;
 };
+const menuItems: CurrencyCode[] = ['UAH', 'USD', 'EUR', 'GBP'];
 
-type menuItemType = { value: string };
-
-const menuItem: menuItemType[] = [
-	{ value: 'UAH' },
-	{ value: 'USD' },
-	{ value: 'EUR' },
-	{ value: 'GBR' },
-];
-
-export function ListOfCurrencies({ value, onChange }: ListOfCurrenciesProps) {
-	const setAmount = useCurrencyAmount((state) => state.setAmount);
+export function ListOfCurrencies({
+	value,
+	onChange,
+	excludedValue,
+}: ListOfCurrenciesProps) {
 	return (
 		<Select
 			value={value}
-			onChange={(e) => {
-				onChange(e.target.value);
-				setAmount('toAmount', '');
-				setAmount('fromAmount', '');
+			onChange={(event: SelectChangeEvent<CurrencyCode>) => {
+				onChange(event.target.value as CurrencyCode);
 			}}
 			sx={{
 				height: '56px',
@@ -35,12 +29,14 @@ export function ListOfCurrencies({ value, onChange }: ListOfCurrenciesProps) {
 				},
 			}}
 		>
-			{menuItem.map((item) => (
+			{menuItems.map((item) => (
 				<MenuItem
+					key={item}
 					sx={{ color: 'var(--color-brand-text)' }}
-					value={item.value}
+					value={item}
+					disabled={item === excludedValue}
 				>
-					{item.value}
+					{item}
 				</MenuItem>
 			))}
 		</Select>

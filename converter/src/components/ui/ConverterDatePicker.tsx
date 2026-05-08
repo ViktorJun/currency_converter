@@ -1,21 +1,29 @@
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { useDate } from '../../store/useDate';
 import type { Dayjs } from 'dayjs';
 
-export function ConverterDatePicker() {
-	const today = useDate((state) => state.today);
-	const weekAgo = today.subtract(1, 'week');
-	const setSelectedDate = useDate((state) => state.setSelectedDate);
+type ConverterDatePickerProps = {
+	value: Dayjs;
+	onChange: (value: Dayjs) => void;
+	minDate: Dayjs;
+	maxDate: Dayjs;
+};
+
+export function ConverterDatePicker({
+	value,
+	onChange,
+	minDate,
+	maxDate,
+}: ConverterDatePickerProps) {
 	return (
 		<DatePicker
-			defaultValue={today}
+			value={value}
 			onChange={(newDate: Dayjs | null) => {
 				if (newDate) {
-					setSelectedDate(newDate);
+					onChange(newDate);
 				}
 			}}
-			minDate={weekAgo}
-			maxDate={today}
+			minDate={minDate}
+			maxDate={maxDate}
 			sx={{
 				maxWidth: '220px',
 				'& .MuiPickersInputBase-sectionsContainer': {
