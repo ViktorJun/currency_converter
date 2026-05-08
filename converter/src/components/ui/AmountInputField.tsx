@@ -6,7 +6,6 @@ import type { CurrencyFormValues } from '../../schemas/zodSchema';
 type AmountInputFieldProps = {
 	name: Path<CurrencyFormValues>;
 	control: Control<CurrencyFormValues>;
-	value: string;
 	error?: FieldError;
 	onValueChange: (value: string) => void;
 };
@@ -14,7 +13,6 @@ type AmountInputFieldProps = {
 export function AmountInputField({
 	name,
 	control,
-	value,
 	error,
 	onValueChange,
 }: AmountInputFieldProps) {
@@ -25,7 +23,6 @@ export function AmountInputField({
 			render={({ field }) => (
 				<TextField
 					{...field}
-					value={value}
 					onChange={(event) => {
 						const nextValue = event.target.value;
 						field.onChange(nextValue);

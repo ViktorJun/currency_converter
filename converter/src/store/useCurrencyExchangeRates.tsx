@@ -1,17 +1,23 @@
 import { create } from 'zustand';
 import { LINK_API } from '../constants/Variables';
-import { useCurrencyName } from './useCurrencyName';
-import { useDate } from './useDate';
+import type { CurrencyCode } from '../schemas/zodSchema';
+import type { Dayjs } from 'dayjs';
 
 type CurrencyRate = {
 	rate: number;
+};
+
+type FetchCurrencyParams = {
+	fromCurrency: CurrencyCode;
+	toCurrency: CurrencyCode;
+	selectedDate: Dayjs;
 };
 
 type CurrencyExchangeRatesState = {
 	currency: CurrencyRate[];
 	isLoading: boolean;
 	error: string | null;
-	fetchCurrency: () => Promise<void>;
+	fetchCurrency: (params: FetchCurrencyParams) => Promise<void>;
 };
 
 export const useCurrencyExchangeRates = create<CurrencyExchangeRatesState>(
@@ -19,9 +25,7 @@ export const useCurrencyExchangeRates = create<CurrencyExchangeRatesState>(
 		currency: [],
 		isLoading: false,
 		error: null,
-		fetchCurrency: async () => {
-			const { fromCurrency, toCurrency } = useCurrencyName.getState();
-			const { selectedDate } = useDate.getState();
+		fetchCurrency: async ({ fromCurrency, toCurrency, selectedDate }) => {
 			const formattedDate = selectedDate.format('YYYY-MM-DD');
 			set({ isLoading: true, error: null });
 			try {
