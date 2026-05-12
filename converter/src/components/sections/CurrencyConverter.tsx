@@ -10,7 +10,6 @@ import { ListOfCurrencies } from '../ui/ListOfCurrencies';
 import { AmountInputField } from '../ui/AmountInputField';
 import { ConverterDatePicker } from '../ui/ConverterDatePicker';
 import { convertAmount } from '../../utils/convertAmount';
-import { type AmountField } from '../../store/useCurrencyAmount';
 import { useCurrencyExchangeRates } from '../../store/useCurrencyExchangeRates';
 import { useConverterHistory } from '../../store/useConverterHistory';
 
@@ -57,7 +56,7 @@ export function CurrencyConverter() {
 			toCurrency: data.toCurrency,
 		});
 	};
-	const handleChange = (nameAmount: AmountField, value: string): void => {
+	const handleChange = (nameAmount: 'toAmount' | 'fromAmount' , value: string): void => {
 		const result = convertAmount(nameAmount, value, currencyData[0]?.rate);
 		if (!result) return;
 		setValue(result.field, result.value, { shouldValidate: true });

@@ -31,7 +31,7 @@ export function Services() {
 			icon: SupportAgentIcon,
 			title: 'Підтримка клієнтів',
 			description: 'Отримуйте відповіді на запитання у зручний спосіб.',
-			link: '/questions',
+			link: '/questions#questions-form',
 		},
 	];
 	const banner: AdvertisingBannerProps = {
