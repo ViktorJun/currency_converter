@@ -23,7 +23,7 @@ export function AdditionalFeatures() {
 			title: 'Запит до підтримки',
 			description:
 				'Напишіть нам і отримайте швидку відповідь від нашої команди.',
-			link: '/questions',
+			link: '/questions#questions-form',
 		},
 	];
 	return (
@@ -60,7 +60,7 @@ export function AdditionalFeatures() {
 					</div>
 				);
 			})}
-			<Link to="/questions" className="mt-3">
+			<Link to="/questions#questions-form" className="mt-3">
 				<button className="rounded-md bg-blue-700 px-6 py-2 text-white md:px-10 md:py-3">
 					Задати питання
 				</button>

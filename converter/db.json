@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "name": "Віктор Булаш ",
+      "email": "viktorbylash@gmail.com",
+      "theme": "problem2",
+      "message": "fgfgfg",
+      "id": "jkU6U3HJ90Q"
+    },
+    {
+      "name": "Віктор Булаш ",
+      "email": "viktorbylash@gmail.com",
+      "theme": "Проблема з конвертацією валюти",
+      "message": "fgfgfg",
+      "id": "C9j7WZk-eDA"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

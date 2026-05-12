@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" fill="none">
+  <defs>
+    <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7286FF"/>
+      <stop offset="1" stop-color="#4E67F4"/>
+    </linearGradient>
+    <linearGradient id="blueSoft" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EEF3FF"/>
+      <stop offset="1" stop-color="#E3EAFF"/>
+    </linearGradient>
+    <filter id="shadowXL" x="-20%" y="-20%" width="140%" height="170%">
+      <feDropShadow dx="0" dy="24" stdDeviation="26" flood-color="#4A63C7" flood-opacity="0.18"/>
+    </filter>
+    <filter id="shadowLG" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#4A63C7" flood-opacity="0.16"/>
+    </filter>
+    <filter id="shadowMD" x="-35%" y="-35%" width="170%" height="190%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#4A63C7" flood-opacity="0.14"/>
+    </filter>
+    <filter id="shadowSM" x="-40%" y="-40%" width="180%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#4A63C7" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Main browser window -->
+  <g filter="url(#shadowXL)">
+    <rect x="230" y="80" width="560" height="360" rx="30" fill="url(#blueSoft)"/>
+    <rect x="230" y="80" width="560" height="58" rx="30" fill="#D7E1FF"/>
+    <rect x="230" y="108" width="560" height="30" fill="#D7E1FF"/>
+    <circle cx="270" cy="109" r="6.5" fill="#FAFCFF"/>
+    <circle cx="295" cy="109" r="6.5" fill="#FAFCFF"/>
+    <circle cx="320" cy="109" r="6.5" fill="#FAFCFF"/>
+
+    <rect x="270" y="150" width="480" height="245" rx="22" fill="#FFFFFF"/>
+
+    <!-- decorative content lines -->
+    <rect x="350" y="330" width="235" height="12" rx="6" fill="#E6EBF7"/>
+    <rect x="350" y="354" width="180" height="12" rx="6" fill="#EEF2F9"/>
+
+    <!-- chat bubble -->
+    <g filter="url(#shadowSM)">
+      <path d="M395 180H606C621.464 180 634 192.536 634 208V267C634 282.464 621.464 295 606 295H495L449 333V295H395C379.536 295 367 282.464 367 267V208C367 192.536 379.536 180 395 180Z" fill="url(#blueGrad)"/>
+      <circle cx="455" cy="238" r="11" fill="#FFFFFF"/>
+      <circle cx="500" cy="238" r="11" fill="#FFFFFF"/>
+      <circle cx="545" cy="238" r="11" fill="#FFFFFF"/>
+    </g>
+  </g>
+
+  <!-- Question mark badge -->
+  <g filter="url(#shadowLG)">
+    <circle cx="845" cy="145" r="58" fill="#FFFFFF"/>
+    <path d="M828 126C828 114.4 837.4 105 849 105C860.6 105 870 114.4 870 126C870 136.3 863.1 141.3 856.5 145.8C851.3 149.3 847 152.2 847 159" stroke="url(#blueGrad)" stroke-width="11" stroke-linecap="round"/>
+    <circle cx="848" cy="178" r="7.5" fill="url(#blueGrad)"/>
+  </g>
+
+  <!-- Left user card -->
+  <g filter="url(#shadowLG)">
+    <rect x="80" y="185" width="230" height="110" rx="24" fill="#FFFFFF"/>
+    <g transform="translate(110 215)">
+      <circle cx="24" cy="22" r="12" fill="url(#blueGrad)"/>
+      <path d="M8 58C8 45.85 17.85 36 30 36H18C30.15 36 40 45.85 40 58" fill="url(#blueGrad)"/>
+      <path d="M8 58C8 45.85 17.85 36 30 36C42.15 36 52 45.85 52 58" fill="url(#blueGrad)"/>
+    </g>
+    <rect x="170" y="220" width="78" height="12" rx="6" fill="#D8DFEE"/>
+    <rect x="170" y="244" width="92" height="12" rx="6" fill="#E7ECF6"/>
+    <rect x="170" y="268" width="70" height="12" rx="6" fill="#E7ECF6"/>
+  </g>
+
+  <!-- Left envelope card -->
+  <g filter="url(#shadowLG)">
+    <rect x="135" y="350" width="170" height="120" rx="24" fill="#FFFFFF"/>
+    <path d="M135 384L220 444L305 384" stroke="url(#blueGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M155 382H285C296.046 382 305 390.954 305 402V438C305 449.046 296.046 458 285 458H155C143.954 458 135 449.046 135 438V402C135 390.954 143.954 382 155 382Z" fill="#FFFFFF"/>
+    <path d="M155 382H285C296.046 382 305 390.954 305 402V438C305 449.046 296.046 458 285 458H155C143.954 458 135 449.046 135 438V402C135 390.954 143.954 382 155 382Z" stroke="#ECF0F8" stroke-width="2"/>
+    <path d="M136 385L220 445L304 385" stroke="url(#blueGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Right top info card -->
+  <g filter="url(#shadowLG)">
+    <rect x="920" y="185" width="205" height="110" rx="24" fill="#FFFFFF"/>
+    <circle cx="972" cy="223" r="10" fill="#D9E0EE"/>
+    <rect x="995" y="217" width="80" height="10" rx="5" fill="#E1E7F4"/>
+    <rect x="995" y="241" width="102" height="10" rx="5" fill="#E9EDF7"/>
+    <circle cx="972" cy="253" r="10" fill="#D9E0EE"/>
+    <rect x="995" y="247" width="86" height="10" rx="5" fill="#E9EDF7"/>
+  </g>
+
+  <!-- Right bottom confirmation card -->
+  <g filter="url(#shadowLG)">
+    <rect x="920" y="335" width="205" height="110" rx="24" fill="#FFFFFF"/>
+    <rect x="965" y="373" width="82" height="10" rx="5" fill="#E2E7F4"/>
+    <rect x="965" y="397" width="64" height="10" rx="5" fill="#E9EDF7"/>
+    <g transform="translate(1068 364)">
+      <circle cx="20" cy="20" r="20" fill="#EAF0FF"/>
+      <path d="M11 21L18 28L30 14" stroke="url(#blueGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- decorative accent instead of headphones -->
+  <g filter="url(#shadowMD)">
+    <circle cx="910" cy="470" r="64" fill="#FFFFFF" opacity="0.95"/>
+    <circle cx="910" cy="470" r="42" fill="#EEF3FF"/>
+    <path d="M884 470L902 488L938 452" stroke="url(#blueGrad)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- small accent dots -->
+  <circle cx="1100" cy="120" r="7" fill="#E3E8FF"/>
+  <circle cx="1020" cy="490" r="6" fill="#E8EDFF"/>
+  <circle cx="95" cy="500" r="7" fill="#E8EDFF"/>
+</svg>

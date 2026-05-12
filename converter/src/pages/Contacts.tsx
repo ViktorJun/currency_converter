@@ -38,7 +38,7 @@ export function Contacts() {
 		description: 'Звʼяжіться з нами зручним способом',
 		nameBtn: 'Задати питання',
 		image: contactSupport,
-		link: '/contacts#contactInfo',
+		link: '/questions#questions-form',
 		styleImage: 'w-full max-h-[390px]',
 	};
 	return (
