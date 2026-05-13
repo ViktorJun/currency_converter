@@ -56,7 +56,10 @@ export function CurrencyConverter() {
 			toCurrency: data.toCurrency,
 		});
 	};
-	const handleChange = (nameAmount: 'toAmount' | 'fromAmount' , value: string): void => {
+	const handleChange = (
+		nameAmount: 'toAmount' | 'fromAmount',
+		value: string
+	): void => {
 		const result = convertAmount(nameAmount, value, currencyData[0]?.rate);
 		if (!result) return;
 		setValue(result.field, result.value, { shouldValidate: true });
