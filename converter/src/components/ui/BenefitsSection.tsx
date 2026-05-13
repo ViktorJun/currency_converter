@@ -12,7 +12,7 @@ type BenefitsSectionProps = {
 };
 export function BenefitsSection({ benefits, title }: BenefitsSectionProps) {
 	return (
-		<div className="border-brand-bg h-full flex flex-col gap-2 border-2 px-8 py-5">
+		<div className="border-brand-bg flex h-full flex-col gap-2 border-2 px-8 py-5">
 			<h1 className="pb-4 text-xl font-bold">{title}</h1>
 			<div className="flex flex-1 flex-col divide-y-2 divide-[var(--color-brand-bg)]">
 				{benefits.map((item) => {
@@ -23,11 +23,15 @@ export function BenefitsSection({ benefits, title }: BenefitsSectionProps) {
 							key={item.subtitle ?? item.description}
 							className="flex flex-1 items-center gap-3 py-3"
 						>
-							<Icon sx={{ color: 'var(--color-brand-primary)' }} />
+							<Icon
+								sx={{ color: 'var(--color-brand-primary)' }}
+							/>
 							{item.subtitle ? (
 								<div>
 									<p className="font-bold">{item.subtitle}</p>
-									<p className="text-brand-text">{item.description}</p>
+									<p className="text-brand-text">
+										{item.description}
+									</p>
 								</div>
 							) : (
 								<p>{item.description}</p>

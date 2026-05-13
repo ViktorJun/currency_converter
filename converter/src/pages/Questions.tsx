@@ -2,12 +2,15 @@ import {
 	FeatureCard,
 	type FeatureCardProps,
 } from '../components/ui/FeatureCard';
-import {AdvertisingBanner} from "../components/sections/AdvertisingBanner";
+import {
+	AdvertisingBanner,
+	type AdvertisingBannerProps,
+} from '../components/sections/AdvertisingBanner';
 import supportCommunication from '../assets/supportCommunication.svg';
 import SmsIcon from '@mui/icons-material/Sms';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import {QuestionsInfo} from "../components/sections/QuestionsInfo";
+import { QuestionsInfo } from '../components/sections/QuestionsInfo';
 
 export function Questions() {
 	const features: FeatureCardProps[] = [
@@ -26,13 +29,14 @@ export function Questions() {
 		{
 			icon: AccessTimeIcon,
 			title: 'Підтримка 24/7',
-			description: 'Ми на зв\'язку у будь-який зручний для вас час.',
+			description: "Ми на зв'язку у будь-який зручний для вас час.",
 			link: '/questions#questions-form',
 		},
 	];
-	const banner = {
+	const banner: AdvertisingBannerProps = {
 		title: 'Маєте запитання?',
-		description: 'Напишіть нам, і ми допоможемо розібратися з роботою сервісу',
+		description:
+			'Напишіть нам, і ми допоможемо розібратися з роботою сервісу',
 		nameBtn: 'Надіслати питання',
 		image: supportCommunication,
 		link: '/questions#questions-form',

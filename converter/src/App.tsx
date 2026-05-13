@@ -6,7 +6,6 @@ import { Converter } from './pages/Converter';
 import { Services } from './pages/Services';
 import { Contacts } from './pages/Contacts';
 import { Questions } from './pages/Questions';
-import { Account } from './pages/Account';
 import { Footer } from './components/layout/Footer';
 import { NotFound } from './pages/NotFound';
 import { ScrollToHash } from './router/ScrollToHash';
@@ -22,7 +21,6 @@ function App() {
 				<Route path="/services" element={<Services />} />
 				<Route path="/contacts" element={<Contacts />} />
 				<Route path="/questions" element={<Questions />} />
-				<Route path="/account" element={<Account />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 			<Footer />
