@@ -11,7 +11,7 @@ export function FindUs() {
 	const directionsUrl: string = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
 	const mapUrl: string = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 	return (
-		<div className="border-brand-bg flex flex-col justify-between border-2 px-8 py-5">
+		<div className="border-brand-bg flex flex-col gap-6 border-2 px-6 py-5 md:px-8">
 			<h1 className="text-2xl font-bold">Знайдіть нас</h1>
 			<MapContainer
 				center={location}
@@ -29,12 +29,12 @@ export function FindUs() {
 					</Popup>
 				</Marker>
 			</MapContainer>
-			<div className="flex items-center justify-between gap-x-3">
+			<div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 				<a
 					href={mapUrl}
 					target="_blank"
 					rel="noreferrer"
-					className="flex cursor-pointer items-center gap-3"
+					className="flex cursor-pointer items-start gap-3 md:items-center"
 				>
 					<LocationPinIcon
 						sx={{ color: 'var(--color-brand-primary)' }}

@@ -22,7 +22,7 @@ const advertisingBanner: AdvertisingBannerProps = {
 	nameBtn: 'Конвертер валют',
 	image: card,
 	link: '/converter',
-	styleImage: 'max-h-[215]',
+	styleImage: 'mx-auto w-full max-w-[320px] object-contain md:max-w-[420px]',
 };
 
 export function Home() {
@@ -34,6 +34,7 @@ export function Home() {
 				nameBtn={advertisingBanner.nameBtn}
 				image={advertisingBanner.image}
 				link={advertisingBanner.link}
+				styleImage={advertisingBanner.styleImage}
 			/>
 			<InformationBanner
 				title={informationBanner.title}

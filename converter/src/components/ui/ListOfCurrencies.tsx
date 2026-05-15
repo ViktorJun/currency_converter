@@ -22,8 +22,8 @@ export function ListOfCurrencies({
 			}}
 			sx={{
 				height: '56px',
-				minWidth: '85px',
-				maxWidth: '100px',
+				Width: '100%',
+				maxWidth: '88px',
 				'& .MuiSelect-select': {
 					color: 'var(--color-brand-text)',
 				},

@@ -27,7 +27,7 @@ export function AdditionalFeatures() {
 		},
 	];
 	return (
-		<div className="border-brand-bg flex flex-col gap-3 border-2 px-8 py-5">
+		<div className="border-brand-bg flex flex-col gap-3 border-2 px-6 py-5 md:px-8">
 			<h1 className="text-xl font-bold">Додаткові можливості</h1>
 			{serviceActions.map((item, index) => {
 				const Icon = item.icon;
@@ -37,14 +37,14 @@ export function AdditionalFeatures() {
 							<hr className="border-brand-bg my-3 border-t-2" />
 						) : null}
 						<Link to={item.link}>
-							<div className="flex items-center gap-3">
+							<div className="flex items-start gap-3 md:items-center">
 								<Icon
 									sx={{
-										fontSize: 60,
+										fontSize: 48,
 										color: 'var(--color-brand-primary)',
 									}}
 								/>
-								<div>
+								<div className="flex-1">
 									<h1 className="text-lg font-bold">
 										{item.title}
 									</h1>
@@ -53,7 +53,11 @@ export function AdditionalFeatures() {
 									</p>
 								</div>
 								<ArrowForwardIosIcon
-									sx={{ marginLeft: 'auto' }}
+									sx={{
+										marginLeft: 'auto',
+										fontSize: 18,
+										color: 'var(--color-brand-primary)',
+									}}
 								/>
 							</div>
 						</Link>

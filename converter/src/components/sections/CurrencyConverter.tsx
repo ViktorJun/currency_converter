@@ -72,16 +72,16 @@ export function CurrencyConverter() {
 		});
 	}, [fromCurrency, toCurrency, selectedDate, fetchCurrency]);
 	return (
-		<div className="bg-brand-bg px-7 py-10" id="converter">
-			<div className="bg-brand-white flex flex-col gap-y-5 place-self-center px-3 py-14 md:px-10">
-				<h1 className="w-full text-[29px] font-bold">
+		<div className="bg-brand-bg px-4 py-10 md:px-7" id="converter">
+			<div className="bg-brand-white mx-auto flex max-w-[900px] flex-col gap-y-5 px-4 py-10 md:px-10 md:py-14">
+				<h1 className="w-full text-2xl font-bold md:text-[29px]">
 					Конвертер валют
 				</h1>
 				<form
 					onSubmit={handleSubmit(onSubmit)}
-					className="flex justify-between gap-x-3 lg:gap-x-9"
+					className="flex flex-col gap-6 lg:flex-row lg:justify-between lg:gap-x-9"
 				>
-					<div className="grid w-fit grid-cols-[minmax(160px,220px)_minmax(80px,100px)] grid-rows-[40px_80px_56px] gap-x-4 gap-y-1">
+					<div className="grid w-full grid-cols-[minmax(0,1fr)_88px] grid-rows-[40px_80px_56px] gap-x-3 gap-y-1 md:max-w-[324px] md:grid-cols-[minmax(160px,220px)_minmax(80px,100px)] md:gap-x-4">
 						<label className="text-brand-text col-span-2">
 							В мене є:
 						</label>
@@ -116,10 +116,10 @@ export function CurrencyConverter() {
 							color: 'var(--color-brand-text)',
 							fontSize: 32,
 							alignSelf: 'center',
-							marginBottom: '40px',
+							transform: { xs: 'rotate(90deg)', lg: 'none' },
 						}}
 					/>
-					<div className="grid w-fit grid-cols-[minmax(160px,220px)_minmax(80px,100px)] grid-rows-[40px_80px_56px] gap-x-4 gap-y-1">
+					<div className="grid w-full grid-cols-[minmax(0,1fr)_88px] grid-rows-[40px_80px_56px] gap-x-3 gap-y-1 md:max-w-[324px] md:grid-cols-[minmax(160px,220px)_minmax(80px,100px)] md:gap-x-4">
 						<label className="text-brand-text col-span-2">
 							Хочу придбати:
 						</label>
@@ -142,7 +142,7 @@ export function CurrencyConverter() {
 						<button
 							type="submit"
 							disabled={!isToday}
-							className={`col-span-2 justify-self-end rounded-md px-5 ${isToday ? 'bg-brand-primary text-white' : 'cursor-not-allowed bg-gray-200'}`}
+							className={`col-span-2 justify-self-end rounded-md px-5 py-2 ${isToday ? 'bg-brand-primary text-white' : 'cursor-not-allowed bg-gray-200'}`}
 						>
 							Зберегти результат
 						</button>

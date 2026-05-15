@@ -9,11 +9,13 @@ import { Questions } from './pages/Questions';
 import { Footer } from './components/layout/Footer';
 import { NotFound } from './pages/NotFound';
 import { ScrollToHash } from './router/ScrollToHash';
+import { HeaderForPhone } from './components/layout/HeaderForPhone';
 
 function App() {
 	return (
 		<Router>
 			<ScrollToHash />
+			<HeaderForPhone />
 			<Header />
 			<Routes>
 				<Route path="/" element={<Home />} />

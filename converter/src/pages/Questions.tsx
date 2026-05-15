@@ -40,7 +40,8 @@ export function Questions() {
 		nameBtn: 'Надіслати питання',
 		image: supportCommunication,
 		link: '/questions#questions-form',
-		styleImage: 'w-full max-h-[390px]',
+		styleImage:
+			'mx-auto w-full max-w-[320px] object-contain md:max-w-[420px]',
 	};
 	return (
 		<div>
@@ -53,7 +54,7 @@ export function Questions() {
 				styleImage={banner.styleImage}
 			/>
 			<div
-				className="mx-auto grid max-w-[1536px] grid-cols-3 grid-rows-1 justify-items-center gap-3 px-2 py-10"
+				className="mx-auto grid max-w-[1536px] grid-cols-1 gap-4 px-4 py-10 md:grid-cols-3 md:gap-3"
 				id="contactInfo"
 			>
 				{features.map((feature) => (
