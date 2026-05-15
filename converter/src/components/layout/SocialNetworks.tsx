@@ -34,7 +34,7 @@ const features: socialNetworksFeatures[] = [
 
 export function SocialNetworks() {
 	return (
-		<div className="flex flex-col content-center gap-4 md:flex-row">
+		<div className="flex flex-row flex-wrap items-center gap-4">
 			{features.map((item) => (
 				<a href={item.link} key={item.alt}>
 					<img

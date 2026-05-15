@@ -30,7 +30,7 @@ export function ContactsInfo() {
 		},
 	];
 	return (
-		<div className="mx-auto grid max-w-[1536px] grid-cols-2 gap-8 px-3 py-5">
+		<div className="mx-auto grid max-w-[1536px] grid-cols-1 gap-6 px-4 py-5 md:grid-cols-2 md:gap-8">
 			<BenefitsSection benefits={benefits} title={title} />
 			<FindUs />
 		</div>

@@ -37,7 +37,7 @@ export function AmountInputField({
 						},
 					}}
 					sx={{
-						maxWidth: '220px',
+						maxWidth: '100%',
 						'& .MuiInputBase-input': {
 							color: 'var(--color-brand-text)',
 						},

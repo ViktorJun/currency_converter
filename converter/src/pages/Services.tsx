@@ -53,7 +53,7 @@ export function Services() {
 				link={banner.link}
 				styleImage={banner.styleImage}
 			/>
-			<div className="mx-auto grid max-w-[1536px] grid-cols-3 grid-rows-1 justify-items-center gap-3 px-2 py-10">
+			<div className="mx-auto grid max-w-[1536px] grid-cols-1 gap-4 px-4 py-10 md:grid-cols-3 md:gap-3">
 				{features.map((feature) => (
 					<FeatureCard
 						key={feature.title}

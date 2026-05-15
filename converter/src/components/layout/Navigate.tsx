@@ -24,15 +24,19 @@ const features: navigateFeatures[] = [
 		title: 'Задати питання',
 	},
 ];
-type NavigateProps = { className: string };
+type NavigateProps = {
+	className?: string;
+	onLinkClick?: () => void;
+};
 
-export function Navigate({ className }: NavigateProps) {
+export function Navigate({ className, onLinkClick }: NavigateProps) {
 	return (
 		<div className={twMerge('flex', className)}>
 			{features.map((item) => (
 				<NavLink
 					key={item.title}
 					to={item.link}
+					onClick={onLinkClick}
 					className={({ isActive }) =>
 						isActive ? 'text-brand-primary' : 'text-brand-text'
 					}

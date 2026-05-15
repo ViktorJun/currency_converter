@@ -18,9 +18,9 @@ export function AdvertisingBanner({
 	styleImage,
 }: AdvertisingBannerProps) {
 	return (
-		<div className="h-[400px] bg-[url('/advertisingBg.svg')] bg-cover bg-center bg-no-repeat px-5">
-			<div className="mx-auto grid h-full max-w-[1536px] grid-cols-2 place-items-center justify-items-center gap-x-5">
-				<div className="flex flex-col gap-5">
+		<div className="bg-[url('/advertisingBg.svg')] bg-cover bg-center bg-no-repeat px-5 py-10 md:h-[400px] md:py-0">
+			<div className="mx-auto grid max-w-[1536px] grid-cols-1 items-center gap-8 md:h-full md:grid-cols-2 md:gap-x-5">
+				<div className="flex flex-col items-center gap-5 text-center md:items-start md:text-left">
 					<h1 className="text-4xl font-bold text-white md:text-5xl">
 						{title}
 					</h1>
@@ -33,7 +33,14 @@ export function AdvertisingBanner({
 						</button>
 					</Link>
 				</div>
-				<img src={image} alt="card" className={styleImage} />
+				<img
+					src={image}
+					alt="card"
+					className={
+						styleImage ??
+						'mx-auto w-full max-w-[320px] object-contain md:max-w-[420px]'
+					}
+				/>
 			</div>
 		</div>
 	);

@@ -9,12 +9,12 @@ export function MobileNumbers({
 	subtitle,
 }: MobileNumbersProps) {
 	return (
-		<div>
-			<div className="flex flex-row gap-5">
+		<div className="flex flex-col gap-1">
+			<div className="flex items-center gap-4">
 				<img src={phoneImage} alt="Phone" className="h-6 w-4" />
 				<a href={`tel:${number.split(' ').join('')}`}>{number}</a>
 			</div>
-			<h2 className="mt-1.5 pl-9 text-xs text-gray-500">{subtitle}</h2>
+			<h2 className="pl-8 text-xs text-gray-500">{subtitle}</h2>
 		</div>
 	);
 }

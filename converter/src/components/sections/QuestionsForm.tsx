@@ -66,18 +66,15 @@ export function QuestionsForm({ formComponents, title }: QuestionsFormProps) {
 
 	return (
 		<form
-			className="border-brand-bg flex h-full flex-col justify-center gap-2 border-2 px-8 py-5"
+			className="border-brand-bg flex h-full flex-col gap-4 border-2 px-6 py-5 md:px-8"
 			onSubmit={handleSubmit(onSubmit)}
 			id="questions-form"
 		>
 			<h1 className="pb-4 text-xl font-bold">{title}</h1>
 			{formComponents.map((item) => {
 				return (
-					<div
-						className="flex w-full items-center gap-3"
-						key={item.name}
-					>
-						<div className="grid w-full grid-cols-[200px_1fr] grid-rows-[55px]">
+					<div className="w-full" key={item.name}>
+						<div className="grid w-full grid-cols-1 gap-2 md:grid-cols-[200px_1fr] md:items-start">
 							<label>{item.label}</label>
 							{item.type !== 'select' ? (
 								<FormInput
@@ -108,7 +105,7 @@ export function QuestionsForm({ formComponents, title }: QuestionsFormProps) {
 					/>
 				}
 				label="Я погоджуюсь на обробку персональних даних"
-				className="mt-7"
+				className="mt-4"
 			/>
 			<button
 				className={`rounded-md px-6 py-2 md:px-10 md:py-3 ${checked ? 'bg-brand-primary text-white' : 'cursor-not-allowed bg-gray-200'}`}

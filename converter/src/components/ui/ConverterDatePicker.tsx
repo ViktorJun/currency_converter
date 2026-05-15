@@ -25,7 +25,7 @@ export function ConverterDatePicker({
 			minDate={minDate}
 			maxDate={maxDate}
 			sx={{
-				maxWidth: '220px',
+				width: '100%',
 				'& .MuiPickersInputBase-sectionsContainer': {
 					color: 'var(--color-brand-text)',
 				},

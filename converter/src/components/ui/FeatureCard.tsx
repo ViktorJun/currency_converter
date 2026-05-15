@@ -17,11 +17,11 @@ export function FeatureCard({
 }: FeatureCardProps) {
 	const Icon = icon;
 	return (
-		<Link to={link}>
-			<div className="bg-brand-bg flex max-w-[500px] items-center justify-center gap-4 rounded-md px-8 py-5">
+		<Link to={link} className="w-full">
+			<div className="bg-brand-bg flex w-full max-w-[500px] flex-col items-center gap-4 rounded-md px-6 py-5 text-center md:flex-row md:px-8 md:text-left">
 				<Icon
 					sx={{
-						fontSize: 80,
+						fontSize: 64,
 						color: 'var(--color-brand-primary)',
 					}}
 				/>
