@@ -43,7 +43,7 @@ export function QuestionsForm({ formComponents, title }: QuestionsFormProps) {
 			setIsLoading(true);
 			setIsSuccess(false);
 			setErrorMessage('');
-			const response = await fetch('http://localhost:3001/questions', {
+			const response = await fetch('/api/questions', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(data),
@@ -115,6 +115,9 @@ export function QuestionsForm({ formComponents, title }: QuestionsFormProps) {
 			</button>
 			{errorMessage && (
 				<span className="text-red-500">{errorMessage}</span>
+			)}
+			{isSuccess && (
+				<span className="text-green-500">Звернення надіслано успішно</span>
 			)}
 		</form>
 	);
