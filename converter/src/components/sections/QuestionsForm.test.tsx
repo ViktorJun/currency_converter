@@ -78,11 +78,14 @@ describe('QuestionsForm', () => {
 
 	it('submits valid data and resets the fields', async () => {
 		const user = userEvent.setup();
-		const fetchMock = vi.spyOn(global, 'fetch').mockResolvedValue({
-			ok: true,
-			json: vi.fn().mockResolvedValue({ id: 1 }),
-		} as Response);
-
+		const fetchMock = vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+			new Response(JSON.stringify({ id: 1 }), {
+				status: 200,
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			})
+		);
 		render(
 			<QuestionsForm
 				formComponents={formComponents}
@@ -114,8 +117,8 @@ describe('QuestionsForm', () => {
 		await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(1));
 
 		expect(fetchMock).toHaveBeenCalledWith(
-			'http://localhost:3001/questions',
-			expect.objectContaining({
+			'/api/questions',
+		expect.objectContaining({
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
